@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { UploadZone } from '@/components/UploadZone';
 import { CategoryGrid } from '@/components/CategoryGrid';
 import { ClassificationResult } from '@/components/ClassificationResult';
-import { Leaf, Sparkles } from 'lucide-react';
+import { Leaf, Sparkles, Linkedin, Github } from 'lucide-react';
 
 export interface ClassificationResult {
   category: string;
@@ -52,18 +52,45 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b border-border bg-card">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center gap-3">
-            <div className="rounded-full bg-eco-primary p-2">
-              <Leaf className="h-6 w-6 text-eco-primary-foreground" />
-            </div>
+      <div className="container mx-auto px-4 py-6">
+        <div className="flex items-center gap-3">
+          <div className="rounded-full bg-eco-primary p-2">
+            <Leaf className="h-6 w-6 text-eco-primary-foreground" />
+          </div>
+          <div className="flex flex-row justify-between items-center w-full">
             <div>
               <h1 className="text-2xl font-bold text-foreground">EcoClassify</h1>
               <p className="text-sm text-muted-foreground">AI-powered litter classification</p>
             </div>
+            <div className='flex flex-col'>
+              <h1 className='text-2xl'>by <a href="https://atharva-nevasekar.vercel.app/" className="underline text-eco-primary" target="_blank" rel="noopener noreferrer">Atharva Nevasekar</a></h1>
+              <div className='flex flex-row gap-4 justify-end items-center mt-1'>
+                <a 
+                  className='flex items-center gap-1 px-2 py-1 rounded hover:bg-blue-50 transition-colors' 
+                  href="https://www.linkedin.com/in/atharvanev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="LinkedIn Profile"
+                > 
+                  <Linkedin className="h-4 w-4 text-blue-600" />
+                  <span className="text-blue-600 text-sm">LinkedIn</span>
+                </a>
+                <a 
+                  className='flex items-center gap-1 px-2 py-1 rounded hover:bg-gray-100 transition-colors' 
+                  href="https://github.com/atharvanev/GarbageClassifier"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="GitHub Repository"
+                >
+                  <Github className="h-4 w-4 text-gray-700" />
+                  <span className="text-gray-700 text-sm">GitHub</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
 
       <main className="container mx-auto px-4 py-8">
         {/* Hero Section */}
@@ -75,6 +102,9 @@ const Index = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Upload an image of litter and our AI will classify it into the correct recycling category. 
             Help make recycling easier and more accurate!
+          </p>
+          <p className='text-lg text-muted-foreground max-w-2xl mx-auto mt-2'>
+             Works best with clear images of single items with a white background.
           </p>
         </div>
 

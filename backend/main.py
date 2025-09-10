@@ -7,7 +7,7 @@ from tensorflow import keras
 from PIL import Image
 import io
 import logging
-
+import sys
 
 
 app = FastAPI()
@@ -23,7 +23,14 @@ app.add_middleware(
 )
 
 model = keras.models.load_model('backend/models/best_garbage.keras')
-logger = logging.getLogger(__name__)
+# Configure logging to always print to stdout
+logging.basicConfig(
+    level=logging.INFO,
+    stream=sys.stdout,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    force=True  # ensures it overrides existing logging config
+)
+logger = logging.getLogger("uvicorn")
 
 IMG_SIZE = (224, 224)
 
