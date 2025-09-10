@@ -2,3 +2,6 @@ tensorflow
 numpy
 fastapi
 uvicorn[standard]
+python-multipart
+pillow
+pydantic

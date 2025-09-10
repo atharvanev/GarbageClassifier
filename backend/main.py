@@ -2,7 +2,7 @@ from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import numpy as np
-import tensorflow
+import tensorflow as tf
 from tensorflow import keras
 from PIL import Image
 import io
@@ -10,6 +10,7 @@ import io
 
 
 app = FastAPI()
+tf.config.set_visible_devices([], "GPU")
 
 #add this so any domain can access the api
 app.add_middleware(
