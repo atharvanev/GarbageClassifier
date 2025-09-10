@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Eco-friendly Litter Classifier Design System - All colors MUST be HSL */
+
+@layer base {
+  :root {
+    --background: 120 20% 98%;
+    --foreground: 150 25% 15%;
+
+    /* Eco-friendly color palette */
+    --eco-primary: 142 71% 45%;
+    --eco-primary-foreground: 0 0% 100%;
+    --eco-secondary: 142 35% 85%;
+    --eco-secondary-foreground: 150 25% 25%;
+
+    /* Category-specific colors */
+    --plastic-primary: 217 91% 60%;
+    --plastic-secondary: 217 91% 95%;
+    --metal-primary: 210 11% 71%;
+    --metal-secondary: 210 11% 95%;
+    --glass-primary: 188 94% 68%;
+    --glass-secondary: 188 94% 95%;
+    --cardboard-primary: 30 67% 54%;
+    --cardboard-secondary: 30 67% 95%;
+    --paper-primary: 210 20% 85%;
+    --paper-secondary: 210 20% 95%;
+    --trash-primary: 0 0% 40%;
+    --trash-secondary: 0 0% 95%;
+
+    /* Upload zone gradients */
+    --gradient-upload: linear-gradient(135deg, hsl(var(--eco-secondary)), hsl(var(--background)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--eco-primary)), hsl(142 71% 55%));
+    --gradient-hover: linear-gradient(135deg, hsl(var(--eco-primary) / 0.1), hsl(var(--eco-secondary) / 0.3));
+
+    /* Shadows and effects */
+    --shadow-eco: 0 4px 20px hsl(var(--eco-primary) / 0.15);
+    --shadow-category: 0 2px 10px hsl(0 0% 0% / 0.1);
+    --shadow-upload: 0 8px 30px hsl(var(--eco-primary) / 0.2);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Override default shadcn colors with eco-friendly theme */
+    --card: 0 0% 100%;
+    --card-foreground: 150 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 25% 15%;
+
+    --primary: 142 71% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 142 35% 85%;
+    --secondary-foreground: 150 25% 25%;
+
+    --muted: 142 20% 92%;
+    --muted-foreground: 150 15% 45%;
+
+    --accent: 142 35% 85%;
+    --accent-foreground: 150 25% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 142 25% 88%;
+    --input: 142 25% 88%;
+    --ring: 142 71% 45%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 150 25% 8%;
+    --foreground: 120 20% 95%;
+
+    --eco-primary: 142 71% 55%;
+    --eco-primary-foreground: 0 0% 100%;
+    --eco-secondary: 142 35% 25%;
+    --eco-secondary-foreground: 120 20% 95%;
+
+    --card: 150 25% 10%;
+    --card-foreground: 120 20% 95%;
+
+    --popover: 150 25% 10%;
+    --popover-foreground: 120 20% 95%;
+
+    --primary: 142 71% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 142 35% 25%;
+    --secondary-foreground: 120 20% 95%;
+
+    --muted: 150 25% 15%;
+    --muted-foreground: 120 20% 65%;
+
+    --accent: 142 35% 25%;
+    --accent-foreground: 120 20% 95%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 25% 18%;
+    --input: 150 25% 18%;
+    --ring: 142 71% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Custom utility classes */
+  .gradient-upload {
+    background: var(--gradient-upload);
+  }
+
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+
+  .gradient-hover {
+    background: var(--gradient-hover);
+  }
+
+  .shadow-eco {
+    box-shadow: var(--shadow-eco);
+  }
+
+  .shadow-category {
+    box-shadow: var(--shadow-category);
+  }
+
+  .shadow-upload {
+    box-shadow: var(--shadow-upload);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+}
