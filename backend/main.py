@@ -39,3 +39,8 @@ async def predict(file: UploadFile = File(...)):
         "predicted_class": int(predicted_class),
         "confidence": float(np.max(predictions))
     }
+
+@app.get("/ping")
+async def ping():
+    print("Pinged!")
+    return {"message": "pong!"}
