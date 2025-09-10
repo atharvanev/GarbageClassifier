@@ -6,6 +6,7 @@ import tensorflow as tf
 from tensorflow import keras
 from PIL import Image
 import io
+import logging
 
 
 
@@ -22,6 +23,7 @@ app.add_middleware(
 )
 
 model = keras.models.load_model('backend/models/best_garbage.keras')
+logger = logging.getLogger(__name__)
 
 IMG_SIZE = (224, 224)
 
@@ -42,5 +44,6 @@ async def predict(file: UploadFile = File(...)):
 
 @app.get("/ping")
 async def ping():
+    logger.info("Pinged!")
     print("Pinged!")
     return {"message": "pong!"}
