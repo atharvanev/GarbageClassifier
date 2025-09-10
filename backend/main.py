@@ -2,12 +2,12 @@ from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import numpy as np
+import tensorflow
 from tensorflow import keras
 from PIL import Image
 import io
 
 
-model = keras.models.load_model('./models/best_garbage.keras()')
 
 app = FastAPI()
 
@@ -20,7 +20,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-model = keras.models.load_model('./models/best_garbage(0.95).keras')
+model = keras.models.load_model('backend/models/best_garbage.keras')
 
 IMG_SIZE = (224, 224)
 

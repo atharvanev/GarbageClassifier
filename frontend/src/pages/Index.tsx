@@ -18,22 +18,27 @@ const Index = () => {
   const handleImageUpload = async (file: File) => {
     setIsClassifying(true);
     setUploadedImage(URL.createObjectURL(file));
-    
-    // Simulate classification API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Mock classification result
-    const categories = [
-      { category: 'Plastic', confidence: 0.85, color: 'plastic' },
-      { category: 'Metal', confidence: 0.76, color: 'metal' },
-      { category: 'Glass', confidence: 0.68, color: 'glass' },
-      { category: 'Cardboard', confidence: 0.92, color: 'cardboard' },
-      { category: 'Paper', confidence: 0.78, color: 'paper' },
-      { category: 'Trash', confidence: 0.43, color: 'trash' },
-    ];
-    
-    const randomResult = categories[Math.floor(Math.random() * categories.length)];
-    setResult(randomResult);
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const categories = ["Cardboard", "Glass", "Metal", "Paper", "Plastic", "Trash"];
+    try {
+      const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:8000";
+      const response = await fetch(`${apiUrl}/predict`, {
+        method: "POST",
+        body: formData,
+      });
+      const data = await response.json();
+      setResult({
+        category: categories[data.predicted_class],
+        confidence: data.confidence,
+        color: categories[data.predicted_class].toLowerCase(),
+      });
+    } catch (error) {
+      setResult(null);
+      // Optionally show an error toast here
+    }
     setIsClassifying(false);
   };
 
