@@ -1,18 +1,3 @@
-
-name: Ping Server
-
-on:
-  schedule:
-    - cron: "*/14 * * * *"
-  workflow_dispatch:
-
-jobs: 
-  ping:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Ping Server
-        run: curl https://ecoclassify.onrender.com/ping
-
 name: Deploy Backend + Frontend
 
 on:
