@@ -63,7 +63,7 @@ const Index = () => {
               <p className="text-sm text-muted-foreground">AI-powered litter classification</p>
             </div>
             <div className='flex flex-col'>
-              <h1 className='text-2xl'>by <a href="https://atharva-nevasekar.vercel.app/" className="underline text-eco-primary" target="_blank" rel="noopener noreferrer">Atharva Nevasekar</a></h1>
+              <h1 className='sm:text-2xl'>by <a href="https://atharva-nevasekar.vercel.app/" className="underline text-eco-primary" target="_blank" rel="noopener noreferrer">Atharva Nevasekar</a></h1>
               <div className='flex flex-row gap-4 justify-end items-center mt-1'>
                 <a 
                   className='flex items-center gap-1 px-2 py-1 rounded hover:bg-blue-50 transition-colors' 
