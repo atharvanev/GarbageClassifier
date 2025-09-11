@@ -6,18 +6,6 @@ A deep learning model to classify images of garbage into six categories: **plast
 
 ---
 
-## 📌 Table of Contents
-- [Overview](#overview)  
-- [Dataset](#dataset)  
-- [Model Architecture](#model-architecture)  
-- [Installation](#installation)  
-- [Usage](#usage)  
-- [Evaluation](#evaluation)  
-- [Future Work](#future-work)  
-- [License](#license)  
-
----
-
 ## 📝 Overview
 This project automates waste classification to support recycling and waste management. By fine-tuning MobileNetV2, it achieves high accuracy while remaining lightweight and efficient.
 
