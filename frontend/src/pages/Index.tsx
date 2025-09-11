@@ -106,6 +106,9 @@ const Index = () => {
           <p className='text-lg text-muted-foreground max-w-2xl mx-auto mt-2'>
              Works best with clear images of single items with a white background.
           </p>
+          <p className='text-lg text-bold underline max-w-2xl mx-auto mt-2'>
+            First upload an image may take a few seconds as the server "wakes up" if it's been idle.
+          </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
